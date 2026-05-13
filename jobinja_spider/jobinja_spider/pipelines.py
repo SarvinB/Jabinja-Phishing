@@ -15,7 +15,7 @@ class JobinjaSpiderPipeline:
     def process_item(self, item, spider):
         
         safe_name = quote(item["url"], safe="")
-        path = "/Users/sarvinbaghi/Desktop/Codes/Cyber Security/JobBinja/flask_login_demo/templates"
+        path = "/Users/sarvinbaghi/Desktop/Codes/Cyber Security/JobBinja/flask/templates"
 
         os.makedirs(path, exist_ok=True)
         
