@@ -49,8 +49,7 @@ class JobinjaSpider(scrapy.Spider):
         # print("ok")
 
         current_url = response.url
-
-        # جلوگیری از بازدید دوباره
+        
         # if current_url in self.visited:
         #     return
         
@@ -60,7 +59,6 @@ class JobinjaSpider(scrapy.Spider):
 
         # self.logger.info(f"Visiting: {current_url}")
 
-        # # استخراج لینک‌ها
         links = response.css("a::attr(href)").getall()
         
         print("STATUS:", response.status)
@@ -88,10 +86,8 @@ class JobinjaSpider(scrapy.Spider):
 
             parsed = urlparse(absolute)
 
-            # فقط لینک‌های داخلی
             if parsed.netloc == self.allowed_domain:
                 
-                # رفتن به صفحه بعد
                 # if absolute not in self.visited:
                     
                 #     print("********", absolute)
@@ -115,7 +111,6 @@ class JobinjaSpider(scrapy.Spider):
 
                     
         # print(current_url[:40])
-        # ذخیره نتیجه
 
 
         
